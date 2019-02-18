@@ -19,6 +19,16 @@ public class ValueFactory {
         return sb.toString();
     }
 
+    public static long randomLong(long min, long max) {
+        long l = RANDOM.nextLong();
+        return l >= min && l <= max ? l : (l % (max - min + 1)) + min;
+    }
+
+    // 0.0 - 1.0
+    public static double randomDouble() {
+        return RANDOM.nextDouble();
+    }
+
     public static Object randomItem(Object[] items) {
         return items == null || items.length == 0 ? null :
                 items[RANDOM.nextInt(items.length)];

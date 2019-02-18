@@ -37,6 +37,12 @@ public class POJOFactory<T> {
 
     Map<String, int[]> randomStringFields = new HashMap<>();
 
+    Map<String, int[]> randomIntegerFields = new HashMap<>();
+
+    Set<String> randomDoubleFields = new HashSet<>();
+
+    Map<String, long[]> randomLongFields = new HashMap<>();
+
     Map<String, Object> fixedValues = new HashMap<>();
 
     Map<String, Supplier<?>> valueSuppliers = new HashMap<>();
