@@ -25,9 +25,14 @@ public class POJOReflection {
 
     public static <T> T newInstanceOrNull(Class<T> type) {
         try {
-            return type.newInstance();
+            return usingDefaultConstructor(type);
         } catch (InstantiationException | IllegalAccessException e) {
             return null;
         }
+    }
+
+    private static <T> T usingDefaultConstructor(Class<T> type)
+            throws InstantiationException, IllegalAccessException {
+        return type.newInstance();
     }
 }
